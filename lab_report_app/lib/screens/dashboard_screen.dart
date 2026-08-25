@@ -157,7 +157,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     Expanded(
                       flex: 3,
                       child: DropdownButtonFormField<TemplateModel>(
-                        value: _selectedTemplate,
+                        initialValue: _selectedTemplate,
                         decoration: const InputDecoration(
                           labelText: 'Select Test Template (e.g. CBC, LFT, Typhoid)',
                           prefixIcon: Icon(Icons.medical_services, color: AppConstants.primaryTeal),
