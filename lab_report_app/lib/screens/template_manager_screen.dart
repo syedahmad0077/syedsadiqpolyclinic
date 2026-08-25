@@ -181,7 +181,7 @@ class _TemplateManagerScreenState extends State<TemplateManagerScreen> {
                     );
 
                     await HiveDatabaseService.instance.saveTemplate(newTemplate);
-                    if (mounted) Navigator.pop(ctx);
+                    if (context.mounted) Navigator.pop(ctx);
                     _loadTemplates();
                   },
                   child: const Text('Save Template', style: TextStyle(color: Colors.white)),

@@ -25,7 +25,7 @@ class PdfGenerationService {
         margin: const pw.EdgeInsets.all(32),
         build: (pw.Context context) {
           return pw.Column(
-            cross: pw.CrossAxisAlignment.start,
+            crossAxisAlignment: pw.CrossAxisAlignment.start,
             children: [
               // CLINIC BRAND HEADER
               pw.Container(
@@ -38,7 +38,7 @@ class PdfGenerationService {
                   mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                   children: [
                     pw.Column(
-                      cross: pw.CrossAxisAlignment.start,
+                      crossAxisAlignment: pw.CrossAxisAlignment.start,
                       children: [
                         pw.Text(
                           AppConstants.clinicName,
@@ -99,11 +99,11 @@ class PdfGenerationService {
                 ),
                 child: pw.Row(
                   mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
-                  cross: pw.CrossAxisAlignment.start,
+                  crossAxisAlignment: pw.CrossAxisAlignment.start,
                   children: [
                     pw.Expanded(
                       child: pw.Column(
-                        cross: pw.CrossAxisAlignment.start,
+                        crossAxisAlignment: pw.CrossAxisAlignment.start,
                         children: [
                           _buildDetailRow('Patient Name:', report.patientName, isBold: true),
                           pw.SizedBox(height: 4),
@@ -115,7 +115,7 @@ class PdfGenerationService {
                     pw.SizedBox(width: 12),
                     pw.Expanded(
                       child: pw.Column(
-                        cross: pw.CrossAxisAlignment.start,
+                        crossAxisAlignment: pw.CrossAxisAlignment.start,
                         children: [
                           _buildDetailRow('Serial Number:', 'SSP-${report.serialNumber}', isBold: true),
                           pw.SizedBox(height: 4),
@@ -192,7 +192,7 @@ class PdfGenerationService {
                 mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                 children: [
                   pw.Column(
-                    cross: pw.CrossAxisAlignment.center,
+                    crossAxisAlignment: pw.CrossAxisAlignment.center,
                     children: [
                       pw.Container(width: 130, height: 1, color: PdfColors.grey400),
                       pw.SizedBox(height: 4),
@@ -201,7 +201,7 @@ class PdfGenerationService {
                     ],
                   ),
                   pw.Column(
-                    cross: pw.CrossAxisAlignment.center,
+                    crossAxisAlignment: pw.CrossAxisAlignment.center,
                     children: [
                       pw.Container(width: 130, height: 1, color: PdfColors.grey400),
                       pw.SizedBox(height: 4),

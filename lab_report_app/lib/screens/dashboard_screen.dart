@@ -114,7 +114,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             Icon(Icons.local_hospital, color: Colors.white),
             SizedBox(width: 10),
             Column(
-              cross: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(AppConstants.clinicName, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
                 Text(AppConstants.clinicSubtitle, style: TextStyle(fontSize: 10, color: Colors.white70)),
