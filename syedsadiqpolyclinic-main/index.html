@@ -12,6 +12,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&family=Rokkitt:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      }
+    })();
+  </script>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -24,17 +32,7 @@
 
     <a href="#home" class="nav-logo" aria-label="Syed Sadiq Poly Clinic – Home">
       <div class="logo-icon">
-        <svg width="42" height="42" viewBox="0 0 42 42" fill="none" aria-hidden="true">
-          <circle cx="21" cy="21" r="21" fill="url(#ng1)"/>
-          <rect x="18" y="9"  width="6" height="24" rx="3" fill="white"/>
-          <rect x="9"  y="18" width="24" height="6"  rx="3" fill="white"/>
-          <defs>
-            <linearGradient id="ng1" x1="0" y1="0" x2="42" y2="42">
-              <stop offset="0%" stop-color="#2a82d4"/>
-              <stop offset="100%" stop-color="#0d3b6e"/>
-            </linearGradient>
-          </defs>
-        </svg>
+        <img src="images/clinic_official_logo.png" alt="Syed Sadiq Poly Clinic Official Emblem" class="official-logo-img"/>
       </div>
       <div class="logo-text">
         <span class="logo-main">Syed Sadiq</span>
@@ -52,6 +50,22 @@
     </ul>
 
     <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Light / Dark Mode" title="Toggle Light / Dark Mode">
+        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
       <a href="tel:+923004915255" class="nav-phone" id="navPhone" aria-label="Call clinic">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
         +92 300 4915255
@@ -240,24 +254,9 @@
       <div class="featured-doctor-content">
 
         <!-- Brain visual -->
-        <div class="featured-doctor-visual" aria-hidden="true">
+        <div class="featured-doctor-visual" aria-label="Neurology Brain Logo">
           <div class="featured-flex-frame">
-            <svg width="170" height="155" viewBox="0 0 200 180" fill="none">
-              <ellipse cx="100" cy="95" rx="78" ry="62" fill="url(#fBg1)" opacity=".88"/>
-              <path d="M42 95 Q62 58 100 53 Q138 58 158 95 Q138 132 100 137 Q62 132 42 95Z" fill="url(#fBg2)" opacity=".65"/>
-              <path d="M100 53 L100 137" stroke="rgba(255,255,255,.25)" stroke-width="1.5"/>
-              <path d="M58 78 Q80 88 100 82 Q120 88 142 78" stroke="rgba(255,255,255,.35)" stroke-width="1.5" fill="none"/>
-              <path d="M53 100 Q76 112 96 107 Q116 112 147 100" stroke="rgba(255,255,255,.35)" stroke-width="1.5" fill="none"/>
-              <path d="M58 119 Q80 128 100 124 Q120 128 142 119" stroke="rgba(255,255,255,.25)" stroke-width="1.5" fill="none"/>
-              <circle cx="74"  cy="84"  r="5" fill="#a78bfa" opacity=".9"><animate attributeName="opacity" values=".5;1;.5" dur="2.2s" repeatCount="indefinite"/></circle>
-              <circle cx="126" cy="84"  r="5" fill="#60a5fa" opacity=".9"><animate attributeName="opacity" values="1;.5;1" dur="2.2s" repeatCount="indefinite"/></circle>
-              <circle cx="63"  cy="106" r="4" fill="#34d399"  opacity=".85"><animate attributeName="opacity" values=".6;1;.6" dur="3s"   repeatCount="indefinite"/></circle>
-              <circle cx="137" cy="106" r="4" fill="#f59e0b"  opacity=".85"><animate attributeName="opacity" values="1;.6;1" dur="3s"   repeatCount="indefinite"/></circle>
-              <defs>
-                <linearGradient id="fBg1" x1="22" y1="33" x2="178" y2="162"><stop offset="0%" stop-color="#6366f1"/><stop offset="55%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
-                <linearGradient id="fBg2" x1="22" y1="33" x2="178" y2="162"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
-              </defs>
-            </svg>
+            <img src="images/brain_neurology_logo.png" alt="Neurology Brain Anatomical Emblem" class="featured-brain-img"/>
           </div>
         </div>
 
@@ -301,14 +300,8 @@
       <!-- Dr. Mian Kaleem -->
       <article class="doctor-card" id="drKaleemCard">
         <div class="doctor-card-header neuro-header">
-          <div class="doctor-specialty-icon" aria-hidden="true">
-            <svg width="36" height="36" viewBox="0 0 200 180" fill="none">
-              <ellipse cx="100" cy="90" rx="68" ry="52" fill="url(#kBg)"/>
-              <path d="M100 38 L100 142" stroke="rgba(255,255,255,.3)" stroke-width="2"/>
-              <circle cx="70" cy="80" r="7" fill="#a78bfa" opacity=".9"><animate attributeName="opacity" values=".5;1;.5" dur="2s" repeatCount="indefinite"/></circle>
-              <circle cx="130" cy="80" r="7" fill="#60a5fa" opacity=".9"><animate attributeName="opacity" values="1;.5;1" dur="2s" repeatCount="indefinite"/></circle>
-              <defs><linearGradient id="kBg" x1="32" y1="38" x2="168" y2="142"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#4f46e5"/></linearGradient></defs>
-            </svg>
+          <div class="doctor-specialty-icon" aria-label="Neurology Brain Logo">
+            <img src="images/brain_neurology_logo.png" alt="Neurology Brain Emblem" class="card-brain-logo-img"/>
           </div>
           <div>
             <span class="specialty-label">Neurology</span>
@@ -473,7 +466,9 @@
     </div>
     <div class="services-grid">
       <div class="service-item" id="svc1">
-        <div class="service-icon" aria-hidden="true">🧠</div>
+        <div class="service-icon" aria-label="Neurology Brain Logo">
+          <img src="images/brain_neurology_logo.png" alt="Neurology Brain Logo" class="service-brain-img"/>
+        </div>
         <h4>Neurology</h4>
         <p>Expert diagnosis &amp; treatment of epilepsy, stroke, nerve diseases, migraines, and all neurological conditions.</p>
       </div>
@@ -537,14 +532,8 @@
       <!-- Technologist card -->
       <div class="lab-technologist-card" id="labTechCard">
         <div class="lab-tech-header">
-          <div class="lab-tech-icon" aria-hidden="true">
-            <svg width="54" height="54" viewBox="0 0 24 24" fill="none">
-              <circle cx="12" cy="12" r="12" fill="url(#techGr)"/>
-              <path d="M9 15c0 1.66 1.34 3 3 3s3-1.34 3-3V9H9v6z" fill="white" opacity=".9"/>
-              <rect x="8" y="7" width="8" height="2" rx="1" fill="white" opacity=".85"/>
-              <path d="M13.5 4h-3l-1 2h5l-1-2z" fill="white" opacity=".65"/>
-              <defs><linearGradient id="techGr" x1="0" y1="0" x2="24" y2="24"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#047857"/></linearGradient></defs>
-            </svg>
+          <div class="lab-tech-icon" aria-label="Official Laboratory Emblem">
+            <img src="images/clinic_official_logo.png" alt="Syed Sadiq Poly Clinic Official Laboratory Logo" class="lab-official-logo-img"/>
           </div>
           <span class="lab-tech-badge">Senior Laboratory Incharge</span>
         </div>
@@ -689,13 +678,8 @@
 
         <div class="footer-brand">
           <div class="footer-logo">
-            <div class="logo-icon" aria-hidden="true">
-              <svg width="38" height="38" viewBox="0 0 42 42" fill="none">
-                <circle cx="21" cy="21" r="21" fill="url(#fLg)"/>
-                <rect x="18" y="9"  width="6" height="24" rx="3" fill="white"/>
-                <rect x="9"  y="18" width="24" height="6"  rx="3" fill="white"/>
-                <defs><linearGradient id="fLg" x1="0" y1="0" x2="42" y2="42"><stop offset="0%" stop-color="#2a82d4"/><stop offset="100%" stop-color="#0d3b6e"/></linearGradient></defs>
-              </svg>
+            <div class="logo-icon">
+              <img src="images/clinic_official_logo.png" alt="Syed Sadiq Poly Clinic Official Logo" class="footer-official-logo-img"/>
             </div>
             <div class="logo-text">
               <span class="logo-main">Syed Sadiq</span>
