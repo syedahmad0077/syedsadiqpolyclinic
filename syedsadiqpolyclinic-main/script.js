@@ -4,6 +4,20 @@
    ============================================= */
 'use strict';
 
+/* ── LIGHT / DARK THEME TOGGLE ──────────────── */
+const themeToggle = document.getElementById('themeToggle');
+
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+}
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', toggleTheme);
+}
+
 /* ── NAVBAR SCROLL ──────────────────────────── */
 const navbar    = document.getElementById('navbar');
 const backToTop = document.getElementById('backToTop');
