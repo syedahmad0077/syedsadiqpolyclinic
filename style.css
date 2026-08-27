@@ -484,41 +484,74 @@ button { font-family:inherit; }
   padding:8px 18px; border-radius:50px;
 }
 
-/* Doctors grid */
+/* Doctors grid - horizontal row layout */
 .doctors-grid {
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(310px,1fr));
-  gap:30px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
 }
 .doctor-card {
-  border-radius:var(--radius-lg); overflow:hidden;
-  background:var(--bg-section); box-shadow:var(--shadow-md);
-  transition:all var(--trans);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-section);
+  box-shadow: var(--shadow-md);
+  transition: all var(--trans);
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  border: 1px solid var(--border);
 }
-.doctor-card:hover { transform:translateY(-10px); box-shadow:var(--shadow-xl); }
+.doctor-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-xl); }
 
 .doctor-card-header {
-  padding:30px 26px 22px;
-  display:flex; align-items:center; gap:16px;
+  width: 220px;
+  flex-shrink: 0;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 12px;
 }
-.neuro-header   { background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 55%,#2563eb 100%); }
-.cardio-header  { background:linear-gradient(135deg,#3b0a0a 0%,#7f1d1d 55%,#dc2626 100%); }
-.general-header { background:linear-gradient(135deg,#064e3b 0%,#065f46 55%,#10b981 100%); }
-.gastro-header  { background:linear-gradient(135deg,#1e1b4b 0%,#312e81 55%,#6366f1 100%); }
+.neuro-header   { background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 55%, #2563eb 100%); }
+.cardio-header  { background: linear-gradient(135deg, #3b0a0a 0%, #7f1d1d 55%, #dc2626 100%); }
+.general-header { background: linear-gradient(135deg, #064e3b 0%, #065f46 55%, #10b981 100%); }
+.gastro-header  { background: linear-gradient(135deg, #1e1b4b 0%, #312e81 55%, #6366f1 100%); }
 
 .doctor-specialty-icon {
-  width:58px; height:58px; border-radius:50%; flex-shrink:0;
-  background:rgba(255,255,255,.12); border:2px solid rgba(255,255,255,.18);
-  display:flex; align-items:center; justify-content:center;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  overflow: hidden;
 }
 .specialty-label {
-  font-size:.74rem; font-weight:700; letter-spacing:1.6px; text-transform:uppercase;
-  color:rgba(255,255,255,.88); display:block;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.95);
+  display: block;
 }
 .specialty-sublabel {
-  font-size:.7rem; color:rgba(255,255,255,.5); margin-top:2px; display:block;
+  font-size: .72rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 2px;
+  display: block;
 }
 
-.doctor-card-body { padding:26px 26px 28px; }
+.doctor-card-body {
+  flex: 1;
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .doctor-role {
   color:var(--primary-light); font-size:.7rem; font-weight:700;
   letter-spacing:1.4px; text-transform:uppercase; margin:0 0 6px;
@@ -871,6 +904,9 @@ button { font-family:inherit; }
   .featured-timing { justify-content:center; }
 
   .doctors-grid  { grid-template-columns:1fr; }
+  .doctor-card   { flex-direction:column; }
+  .doctor-card-header { width:100%; padding:24px 20px; }
+  .doctor-card-body   { padding:24px 20px; }
   .services-grid { grid-template-columns:1fr; }
   .about-grid    { grid-template-columns:1fr; }
 
